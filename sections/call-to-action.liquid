@@ -1,13 +1,25 @@
 <div id="section-cta">
   <div class="container">
-    <a href="{{ section.settings.link }}" id="button" class="btn btn--cta {{ section.settings.button_size }}">{{ section.settings.linktext }}</a>
+    <a href="{{ section.settings.link }}" style="background-color: {{ section.settings.color_button }}" class="btn btn--cta {{ section.settings.button_size }}
+    {% if section.settings.button_size == "1" %}btn-small{% endif %}
+    {% if section.settings.button_size == "2" %}btn-medium{% endif %}
+    {% if section.settings.button_size == "3" %}btn-large{% endif %}">{{ section.settings.linktext }}</a>
   </div>
 </div>
 
 <style>
-    #button {
-      background-color: {{ section.settings.color_button }};
-    }
+.btn-small {
+    padding: 10px 18px;
+}
+
+.btn-medium {
+    padding: 30px 38px;
+}
+
+.btn-large {
+    padding: 60px 68px;
+}
+
 </style>
 
 {% schema %}
@@ -23,7 +35,7 @@
       "id": "linktext",
       "type": "text",
       "label": "Button text",
-      "default": "Click here"
+      "default": "Ceci est un bouton"
     },
     {
         "id": "color_button",
@@ -34,20 +46,20 @@
     {
         "id": "button_size",
         "type": "select",
-        "label": "Taille",
-        "default": "medium",
+        "label": "Button size",
+        "default": "2",
         "options": [
           {
             "label": "Petit",
-            "value": "small"
+            "value": "1"
           },
           {
             "label": "Moyen",
-            "value": "medium"
+            "value": "2"
           },
           {
             "label": "Grand",
-            "value": "large"
+            "value": "3"
           }
         ]
     }     
