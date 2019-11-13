@@ -1,0 +1,6 @@
+development:
+  password: 
+  theme_id: "79491268668"
+  store: cocoa-boumba.myshopify.com
+  ignore_files:
+  - config/settings_data.json
