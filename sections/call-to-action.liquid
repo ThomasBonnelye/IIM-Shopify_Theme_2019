@@ -1,0 +1,69 @@
+<div id="section-cta">
+  <div class="container">
+    <a href="{{ section.settings.link }}" id="button" class="btn btn--cta {{ section.settings.button_size }}">{{ section.settings.linktext }}</a>
+  </div>
+</div>
+
+<style>
+    #button {
+      background-color: {{ section.settings.color_button }};
+    }
+</style>
+
+{% schema %}
+{
+  "name": "Call to action",
+  "settings": [
+    {
+      "id": "link",
+      "type": "url",
+      "label": "Button link"
+    },
+    {
+      "id": "linktext",
+      "type": "text",
+      "label": "Button text",
+      "default": "Click here"
+    },
+    {
+        "id": "color_button",
+        "type": "color",
+        "label": "Button color",
+        "default": "#333333"
+    },
+    {
+        "id": "button_size",
+        "type": "select",
+        "label": "Taille",
+        "default": "medium",
+        "options": [
+          {
+            "label": "Petit",
+            "value": "small"
+          },
+          {
+            "label": "Moyen",
+            "value": "medium"
+          },
+          {
+            "label": "Grand",
+            "value": "large"
+          }
+        ]
+    }     
+  ],
+  "presets": [
+    {
+      "name": "Call to Action",
+      "category": "CTA button"
+    }
+  ]
+}
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
