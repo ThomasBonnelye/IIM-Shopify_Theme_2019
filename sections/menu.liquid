@@ -1,11 +1,12 @@
-<div id="section-cta">
-
-    <ul class="parent">
+<div style="display: block; text-align: center;">
+  <img src="{{ section.settings.image | img_url: '400x400'}}" alt="image" >
+    <ul>
         {% for link in linklists[section.settings.main_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        <li>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
       {% endfor %}
   </ul>
-  
 </div>
 
 <style>
@@ -16,6 +17,11 @@
 {
   "name": "Menu",
   "settings": [
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Image"
+  },
   {
     "type": "link_list",
     "id": "main_linklist",
