@@ -1,0 +1,39 @@
+<div id="section-cta">
+
+    <ul class="parent">
+        {% for link in linklists[section.settings.main_linklist].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+  </ul>
+  
+</div>
+
+<style>
+
+</style>
+
+{% schema %}
+{
+  "name": "Menu",
+  "settings": [
+  {
+    "type": "link_list",
+    "id": "main_linklist",
+    "label": "Menu"
+  }   
+  ],
+  "presets": [
+    {
+      "name": "Menu",
+      "category": "Menu CUSTOM"
+    }
+  ]
+}
+
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
